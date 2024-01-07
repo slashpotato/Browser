@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">Browser</string>
+    <string name="go_btn">Go</string>
+    <string name="url_input">Enter Url…</string>
+    <string name="desc_menu" translatable="false">menu</string>
+    <string name="plus_desc" translatable="false">plus</string>
+    <string name="nan" translatable="false">NaN</string>
+</resources>

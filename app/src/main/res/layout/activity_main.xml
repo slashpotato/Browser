@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/webView"
+            android:background="@color/material_dynamic_secondary10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/material_dynamic_secondary10" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:importantForAutofill="no"
+                        android:hint="@string/url_input"
+                        android:backgroundTint="@color/material_dynamic_primary60" />
+                    <Button
+                        android:id="@+id/buttonGo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/go_btn"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="3dp"
+                        android:backgroundTint="@color/material_dynamic_primary60"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/buttonTabs"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/nan"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@android:color/transparent"
+                        android:contentDescription="@string/desc_menu" />
+                    <ImageButton
+                        android:id="@+id/imageButtonNew"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/rounded_add_24"
+                        app:tint="@color/white"
+                        android:backgroundTint="@android:color/transparent"
+                        android:contentDescription="@string/desc_menu" />
+                    <ImageButton
+                        android:id="@+id/imageButtonMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/rounded_menu_24"
+                        app:tint="@color/white"
+                        android:backgroundTint="@android:color/transparent"
+                        android:contentDescription="@string/desc_menu" />
+                </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
