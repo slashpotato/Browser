@@ -14,7 +14,7 @@ import dev.slashpotato.browser.R.*
 
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layout.activity_main)
@@ -24,16 +24,17 @@ class MainActivity : AppCompatActivity() {
         val editText: EditText = findViewById(id.editTextText)
         val webView: WebView = findViewById(id.webView)
 
+        val webSettings: WebSettings = webView.settings
+        webSettings.javaScriptEnabled = true
+
         val homeUrl: String = "https://www.google.com/"
 
         fun goHome() {
             webView.loadUrl(homeUrl)
         }
         fun alog(content: Any) {
-            Log.i("App", content.toString())
+            Log.i("App Log", content.toString())
         }
-
-        webView.settings.userAgentString = ""
 
         buttonGo.setOnClickListener {
             var url = editText.text.toString()
@@ -52,15 +53,12 @@ class MainActivity : AppCompatActivity() {
         webView.webViewClient = object : WebViewClient() {
             @Deprecated("Deprecated in Java")
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-                // do your handling codes here, which url is the requested url
-                // probably you need to open that url rather than redirect:
                 if (url == "") {
                     goHome()
                 }
                 view.loadUrl(url)
-                alog("redirected to $url")
                 editText.setText(webView.url)
-                return false // then it is not handled by default action
+                return false
             }
         }
 
